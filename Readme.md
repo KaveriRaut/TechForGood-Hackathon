@@ -58,9 +58,6 @@ Certainly! Below is the 20-question list along with the detailed result in a sys
 
 
 **Detailed Job Recommendations**
-
-I apologize for the confusion in my previous responses. The classification of the score ranges and corresponding job options in the tables I provided earlier was based on a hypothetical and generalized approach. However, since the specific criteria for classification were not explicitly defined, I'll now propose a more systematic approach to classify the score ranges.
-
 Here's a revised and more precise classification of the score ranges:
 
 **Updated Detailed Job Recommendations**
