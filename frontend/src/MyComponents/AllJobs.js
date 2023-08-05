@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { JobItem } from "./JobItem";
-import { useEffect } from "react";
 
 export const AllJobs = (props) => {
   const [alljobs, setAllJobs] = useState([]);
-  // /******************************************************************* */
+
   useEffect(() => {
     getAllNotes();
   }, []);
@@ -14,31 +13,6 @@ export const AllJobs = (props) => {
     result = await result.json();
     setAllJobs(result);
   };
-  // /******************************************************************* */
-
-  const [searchQuery, setSearchQuery] = useState("");
-
-  const handleSearch = (event) => {
-    setSearchQuery(event.target.value);
-  };
-
-  // const filteredJobs = props.alljobs.filter((job) => {
-  //     const lowerCaseFields = {
-  //         title: job.title,
-  //         desc: job.desc,
-  //         sal: job.sal,
-  //         time: job.time,
-  //         loc: job.loc,
-  //         category: job.category,
-  //         mobileNo: job.mobileNo,
-  //         email: job.email,
-  //         postedBy: job.postedBy,
-  //     };
-
-  //     // return Object.values(lowerCaseFields).some((field) =>
-  //     //     field.includes(searchQuery.toLowerCase())
-  //     // );
-  // });
 
   const chunkArray = (arr, chunkSize) => {
     const chunkedArray = [];
@@ -48,7 +22,7 @@ export const AllJobs = (props) => {
     return chunkedArray;
   };
 
-  const jobChunks = chunkArray(props.alljobs, 3);
+  const jobChunks = chunkArray(alljobs, 3);
 
   let customSearchbtnStyle = {
     width: "200px",
@@ -67,6 +41,51 @@ export const AllJobs = (props) => {
     fontSize: "20px",
   };
 
+  //searching handled => search by title
+  const handleSearchByTitle = async(event)=>{
+    // console.log(event.target.value);
+    let key = event.target.value;
+    if(key){
+        let searchResult = await fetch(`/jobs/search/titles/${key}`);
+        searchResult = await searchResult.json();
+        if(searchResult){
+            setAllJobs(searchResult);
+        }
+    }else{
+        getAllNotes();
+    }
+  }
+
+  //searching handled => search by location
+  const handleSearchByLocation = async(event)=>{
+    // console.log(event.target.value);
+    let key = event.target.value;
+    if(key){
+        let searchResult = await fetch(`/jobs/search/locations/${key}`);
+        searchResult = await searchResult.json();
+        if(searchResult){
+            setAllJobs(searchResult);
+        }
+    }else{
+        getAllNotes();
+    }
+  }
+
+  //searching handled => search by Category
+  const handleSearchByCategory = async(event)=>{
+    // console.log(event.target.value);
+    let key = event.target.value;
+    if(key){
+        let searchResult = await fetch(`/jobs/search/categories/${key}`);
+        searchResult = await searchResult.json();
+        if(searchResult){
+            setAllJobs(searchResult);
+        }
+    }else{
+        getAllNotes();
+    }
+  }
+
   return (
     <div className="container pb-52">
       {/* Display Jobs */}
@@ -74,27 +93,48 @@ export const AllJobs = (props) => {
         All Jobs
       </h2>
 
-      {/* Search Bar */}
-      <div className="mb-3">
-        <input
-          type="text"
-          value={searchQuery}
-          onChange={handleSearch}
-          placeholder="Search Jobs"
-          className="form-control"
-          style={customSearchbtnStyle}
-        />
+        {/* Search Bars */}
+      <div className="row mb-3 input-group rounded">
+        <div className="col-md-4">
+          <input
+            type="search"
+            class="form-control rounded search-bar-box"
+            onChange={handleSearchByTitle}
+            placeholder="Search by Title..."
+            className="form-control"
+          />
+        </div>
+        <div className="col-md-4">
+          <input
+            type="search"
+            class="form-control rounded search-bar-box"
+            onChange={handleSearchByLocation}
+            placeholder="Search by Location..."
+            className="form-control"
+          />
+        </div>
+        <div className="col-md-4">
+          <input
+            type="search"
+            class="form-control rounded search-bar-box"
+            onChange={handleSearchByCategory}
+            placeholder="Search by Category..."
+            className="form-control"
+          />
+        </div>
       </div>
-      
+
       {jobChunks.map((chunk, index) => (
         <div key={index} className="row mb-3">
-          {alljobs.map((eachJob) => (
-            <div key={eachJob.sno} className="col-md-4">
-              <JobItem job={eachJob} onDelete={props.onDelete} />
+          {chunk.map((job) => (
+            <div key={job.sno} className="col-md-4">
+              <JobItem job={job}/>
             </div>
           ))}
         </div>
       ))}
+
+      {alljobs.length === 0 && <p style={customP}>No jobs found!</p>}
     </div>
   );
 };

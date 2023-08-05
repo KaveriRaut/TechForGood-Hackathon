@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 export const AddJob = ({ addJob }) => {
-    const [title, setTitle] = useState("");
+const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
   const [sal, setSal] = useState("");
   const [time, setTime] = useState("");
@@ -47,12 +47,13 @@ export const AddJob = ({ addJob }) => {
   };
 
     const customCardStyle = {
-        width: "55%",
-        padding: "20px",
+        width: "50%",
+        padding: "15px",
         borderRadius: "40px",
         border: "none",
-        left: "34%",
+        left: "50%",
         transform: "translate(-50%, -0%)",
+        backgroundColor: "rgba(255, 255, 255, 0.9)", // Transparent white background
     };
 
     const customLabelStyle = {
@@ -79,7 +80,6 @@ export const AddJob = ({ addJob }) => {
 
     return (
         <div className="container my-3">
-            {/* <img src="https://cdn.dribbble.com/users/4412543/screenshots/11086928/media/c23debeaf4452826b6883c90b771e5a8.gif" alt="" style={customImageStyle}/> */}
             <div className="card" style={customCardStyle}>
                 <div className="card-body">
                     <h3 className="card-title text-center">Add a Job</h3>
