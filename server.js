@@ -27,8 +27,6 @@ app.use('/api',loginRouter);
 const jobsRouter = require('./routes/jobsRoute');
 app.use('/',jobsRouter);
 
-
-
 app.listen(5000,function(){
     console.log('Server running on port 5000');
 })

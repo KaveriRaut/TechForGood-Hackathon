@@ -7,11 +7,9 @@ const jobSchema = new mongoose.Schema({
   },
   description: {
     type: String,
-    required: true,
   },
   salary: {
     type: String,
-    required: true,
   },
   time: {
     type: String,
@@ -19,28 +17,26 @@ const jobSchema = new mongoose.Schema({
   },
   location: {
     type: String,
-    required: true,
   },
   category: {
     type: String,
-    enum: ["product to sell", "service to sell"],
+    // enum: ["product to sell", "service to sell"],
     required: true,
   },
   mobile_no: {
     type: String,
-    required: true,
+    // No 'required' property here, making it optional
   },
   email: {
     type: String,
-    required: true,
+    // No 'required' property here, making it optional
   },
   posted_by: {
     type: String,
-    required: true,
+    // No 'required' property here, making it optional
   },
 });
 
-const Job = mongoose.model('job',jobSchema);
+const Job = mongoose.model("job", jobSchema);
 
 module.exports = Job;
-
