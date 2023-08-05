@@ -19,6 +19,10 @@ app.get("/",(req,res)=>{
     res.send("Express server is running here");
 })
 
+//middleware to loginRouter
+const loginRouter = require('./routes/loginRoute');
+app.use('/api',loginRouter);
+
 //middleware to jobsRouter
 const jobsRouter = require('./routes/jobsRoute');
 app.use('/',jobsRouter);
