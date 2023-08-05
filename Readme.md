@@ -1,58 +1,33 @@
-// REST API
+# REST API
 
-GET : http://localhost:5000/jobs      (server to client data send)
-GET : http://localhost:5000/jobs/:id  (server to client data send)
-POST :  http://localhost:5000/jobs    (client to server data send, stored in db)
-PATCH :  http://localhost:5000/jobs/:id  (update functionality)
-DELETE : http://localhost:5000/jobs/:id   (delete functionality)
+## Endpoints for Job Postings
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+### 1. Jobs CRUD Operations
 
-// REST-API endpoints for Domestic Job-posting
+- **GET** `/jobs`: Get a list of all job postings.
+- **GET** `/jobs/:id`: Get details of a specific job posting.
+- **POST** `/jobs`: Create a new job posting.
+- **PUT** `/jobs/:id`: Update all fields of a specific job posting.
+- **DELETE** `/jobs/:id`: Delete a specific job posting.
 
-//server runinng on POST:5000 : API endpoint will be:  http://localhost:5000/jobs/:id
+### 2. Jobs Search
 
-1. Jobs CRUD operations
+- **GET** `/jobs/search/categories/:category`: Search all jobs based on category.
+- **GET** `/jobs/search/locations/:location`: Search all jobs based on location.
+- **GET** `/jobs/search/titles/:title`: Search all jobs based on title.
 
-GET:    /jobs            - Get a list of all job postings.
-GET:    /jobs/:id        - Get details of a specific job posting.
-POST:   /jobs            - Create a new job posting.
-PUT:    /jobs/:id        - Update all fields of a specific job posting.
-DELETE: /jobs/:id        - Delete a specific job posting.
+### 3. Suggest Domestic Jobs
 
-2. Jobs Search by Category, by Location, by Title
+- **GET** `/jobs/suggest/categories`: Get all the suggested category names in which jobs can be found.
+- **GET** `/jobs/suggest/categories/:category`: Get all the suggested jobs from the selected category name.
 
-GET: /jobs/search/categories/:category     - Search all jobs based on category
-GET: /jobs/search/locations/:location      - Search all jobs based on location
-GET: /jobs/search/titles/:title            - Search all jobs based on title
+---
 
-3. Suggest domestic jobs categories and jobs from each category
+## Domestic Work Assessment
 
-GET: /jobs/suggest/categories       - Get all the suggested 'category names' in which jobs can be found
-GET: /jobs/suggest/categories/:category        - Get all the suggested jobs from the selected 'category name' 
+A user-friendly domestic work assessment is available to suggest suitable domestic jobs based on the user's responses to 20 skill-related questions. Each skill is scored from Basic to Advanced (1 to 3), and the user's total score will determine the recommended job options.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-If want to add 20Que.Quiz-Section based on score can suggest which domestic job can be more suitable for user. 
+### **20-Question List for Domestic Work Assessment**
 
 Certainly! Below is the 20-question list along with the detailed result in a systematic table format:
 
@@ -83,9 +58,6 @@ Certainly! Below is the 20-question list along with the detailed result in a sys
 
 
 **Detailed Job Recommendations**
-
-I apologize for the confusion in my previous responses. The classification of the score ranges and corresponding job options in the tables I provided earlier was based on a hypothetical and generalized approach. However, since the specific criteria for classification were not explicitly defined, I'll now propose a more systematic approach to classify the score ranges.
-
 Here's a revised and more precise classification of the score ranges:
 
 **Updated Detailed Job Recommendations**
@@ -107,6 +79,5 @@ Here's a revised and more precise classification of the score ranges:
 | 141-150     | Agricultural Research Scientist, Agricultural Data Analyst                            |
 | 151-160     | Agricultural Innovator, Agricultural Technology Specialist                             |
 
-This revised classification aims to provide a more balanced and coherent distribution of job options based on the user's total score in the quiz. However, it's essential to note that the specific score ranges and job options should be adjusted and fine-tuned based on real-world data, user feedback, and the specific needs and objectives of your application. Continuous improvement and data analysis will help ensure that the recommendations align more accurately with the user's skills and interests.
 
-These tables provide a clear and organized view of the 20-question list for domestic work assessment and the corresponding job recommendations based on the user's total score. Users can refer to the tables to understand their skill level and explore potential job options suitable for their expertise in domestic work-related areas.
+The job recommendations are based on a hypothetical classification of score ranges. It is essential to conduct further research and analysis to refine the recommendations based on real-world data, user feedback, and specific needs.
