@@ -2,9 +2,9 @@ import "./App.css";
 import logo3 from "./logo3.png";
 import Header from "./MyComponents/Header";
 import { AllJobs } from "./MyComponents/AllJobs";
-// import { Footer } from "./MyComponents/Footer";
+import About from "./MyComponents/about/About"
+import Home from "./MyComponents/home/hero/Hero"
 import { AddJob } from "./MyComponents/AddJob";
-import { About } from "./MyComponents/About";
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -84,9 +84,10 @@ function App() {
       <Router>
         <Header logo={logo3} searchBar={false} />
         <Switch>
+          <Route exact path='/home' component={Home} />
           <Route
             exact
-            path="/"
+            path="/jobs"
             render={() => {
               return (
                 <>
@@ -96,9 +97,7 @@ function App() {
               );
             }}
           ></Route>
-          <Route exact path="/about">
-            <About />
-          </Route>
+          <Route exact path='/about' component={About} />
         </Switch>
         {/* <Footer /> */}
       </Router>

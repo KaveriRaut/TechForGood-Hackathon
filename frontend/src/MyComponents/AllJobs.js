@@ -90,7 +90,7 @@ export const AllJobs = (props) => {
     <div className="container pb-52">
       {/* Display Jobs */}
       <h2 className="mt-32 text-center fw-bold" style={customHeading}>
-        All Jobs
+        All Domestic Jobs
       </h2>
 
         {/* Search Bars */}
@@ -128,12 +128,13 @@ export const AllJobs = (props) => {
         <div key={index} className="row mb-3">
           {chunk.map((job) => (
             <div key={job.sno} className="col-md-4">
-              <JobItem job={job}/>
+              <JobItem job={job} />
             </div>
           ))}
         </div>
       ))}
 
+        
       {alljobs.length === 0 && <p style={customP}>No jobs found!</p>}
     </div>
   );

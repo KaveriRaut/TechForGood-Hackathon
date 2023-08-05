@@ -15,14 +15,14 @@ export default function Header(props) {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/">Jobs</Link>
-              </li>
+                <Link className="nav-link" to="/home">Home</Link>
+              </li> 
+              <li className="nav-item">
+                <Link className="nav-link" to="/jobs">Jobs</Link>
+              </li> 
               <li className="nav-item">
                 <Link className="nav-link" to="/about">About</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/about">Contact</Link>
-              </li>  
+              </li> 
             </ul>
             { props.searchBar? <form className="d-flex">
               <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />

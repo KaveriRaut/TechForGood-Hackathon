@@ -48,9 +48,7 @@ const [title, setTitle] = useState("");
 
     const customCardStyle = {
         width: "50%",
-        padding: "15px",
         borderRadius: "40px",
-        border: "none",
         left: "50%",
         transform: "translate(-50%, -0%)",
         backgroundColor: "rgba(255, 255, 255, 0.9)", // Transparent white background
@@ -82,7 +80,7 @@ const [title, setTitle] = useState("");
         <div className="container my-3">
             <div className="card" style={customCardStyle}>
                 <div className="card-body">
-                    <h3 className="card-title text-center">Add a Job</h3>
+                    <h3 className="card-title text-center">Add new Domestic Job</h3>
                     <form onSubmit={submit}>
                         <div className="mb-3">
                             <label htmlFor="title" className="form-label" style={customLabelStyle}>Job Title</label>
