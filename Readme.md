@@ -18,7 +18,7 @@ Saksham Gram Mahila is a web application aimed at empowering women in rural area
 - :round_pushpin: **Location-based Job Search:** Users can search for domestic jobs available in their nearest locations, ensuring convenience and accessibility.
 
 - :bookmark_tabs: **Category-based Job Search:** Women can search for domestic jobs based on specific categories, such as services or products to sell, as well as by required job title.
-- 
+
 ## 🛠️ Tech Stack
 
 - **Frontend:** HTML, CSS, JavaScript
