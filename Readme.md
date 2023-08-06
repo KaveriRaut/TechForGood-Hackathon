@@ -21,7 +21,7 @@ Saksham Gram Mahila is a web application aimed at empowering women in rural area
 
 ## 🛠️ Tech Stack
 
-- **Frontend:** HTML, CSS, JavaScript
+- **Frontend:** HTML, CSS, JavaScript, React js
 - **Backend:** Node.js, Express.js, Postman
 - **Database:** MongoDB
 - **Additional Tools:** Git, GitHub
