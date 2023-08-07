@@ -93,7 +93,6 @@ export const AllJobs = (props) => {
         All Domestic Jobs
       </h2>
 
-        Search Bars
       <div className="row mb-3 input-group rounded">
         <div className="col-md-4">
           <input

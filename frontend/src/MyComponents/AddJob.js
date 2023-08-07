@@ -56,7 +56,7 @@ export const AddJob = ({ addJob }) => {
     borderRadius: "40px",
     left: "50%",
     transform: "translate(-50%, -0%)",
-    backgroundColor: "rgba(255, 255, 255, 0.9)", // Transparent white background
+    backgroundColor: "#f0f0f0",// Transparent white background
   };
 
   const customLabelStyle = {
