@@ -11,10 +11,12 @@
   padding-top: 31%;
 }
 .hero h1 {
+  text-align: center;
   color: white;
   font-size: 60px;
 }
 .hero p {
+  text-align: center;
   color: #fff;
   opacity: 0.8;
 }
