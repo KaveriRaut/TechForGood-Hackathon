@@ -93,7 +93,7 @@ export const AllJobs = (props) => {
         All Domestic Jobs
       </h2>
 
-        {/* Search Bars */}
+        Search Bars
       <div className="row mb-3 input-group rounded">
         <div className="col-md-4">
           <input
@@ -127,6 +127,7 @@ export const AllJobs = (props) => {
       {jobChunks.map((chunk, index) => (
         <div key={index} className="row mb-3">
           {chunk.map((job) => (
+            console.log(job),
             <div key={job.sno} className="col-md-4">
               <JobItem job={job} />
             </div>

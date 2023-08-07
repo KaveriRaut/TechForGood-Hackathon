@@ -1,9 +1,10 @@
 import "./App.css";
 import logo3 from "./logo3.png";
 import Header from "./MyComponents/Header";
+import Footer from "../src/MyComponents/common/footer/Footer"
 import { AllJobs } from "./MyComponents/AllJobs";
 import About from "./MyComponents/about/About"
-import Home from "./MyComponents/home/hero/Hero"
+import Home from "./MyComponents/home/Home"
 import { AddJob } from "./MyComponents/AddJob";
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -84,6 +85,7 @@ function App() {
       <Router>
         <Header logo={logo3} searchBar={false} />
         <Switch>
+          <Route exact path="/" component={Home} />
           <Route exact path='/home' component={Home} />
           <Route
             exact
@@ -99,7 +101,7 @@ function App() {
           ></Route>
           <Route exact path='/about' component={About} />
         </Switch>
-        {/* <Footer /> */}
+        <Footer />
       </Router>
     </>
   );
