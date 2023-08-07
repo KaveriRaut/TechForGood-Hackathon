@@ -55,6 +55,17 @@ Saksham Gram Mahila is a web application aimed at empowering women in rural area
 - **GET** `/jobs/suggest/categories/:category`: Get all the suggested jobs from the selected category name.
 
 --
+
+## ✨ Screenshots
+![0](https://github.com/KaveriRaut/TechForGood-Hackathon/assets/97447480/d45b1ce0-42df-4e8e-8895-29379a715eda)
+![1](https://github.com/KaveriRaut/TechForGood-Hackathon/assets/97447480/1164b164-c95b-4b6a-9b4d-1dfd30efa850)
+![2](https://github.com/KaveriRaut/TechForGood-Hackathon/assets/97447480/cc580d8f-37ec-44f4-9bb6-6e14c89c249b)
+![3](https://github.com/KaveriRaut/TechForGood-Hackathon/assets/97447480/a4eb8589-f972-4b30-8a45-a5f77efaf8c7)
+
+![4](https://github.com/KaveriRaut/TechForGood-Hackathon/assets/97447480/c7df099c-b0b3-462d-b15a-baa11e3209a5)
+
+
+
 ## 🚀 Getting Started
 
 To run the Saksham Gram Mahila application on your local machine, follow these steps:
